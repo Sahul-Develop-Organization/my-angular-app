@@ -5,17 +5,10 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
 export class App {
   protected readonly title = signal('frontEnd');
-  message: any;
-  constructor(private apiService: ApiService) { };
-  ngOnInit() {
-      this.apiService.getMessage().subscribe(data => {
-          this.message = data;
-      });
-  }
 }
