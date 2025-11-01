@@ -1,0 +1,24 @@
+version: '3.9'
+services:
+  server:
+    build: ./server
+    container_name: express-server
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./server/users.json:/app/users.json
+    networks:
+      - mynet
+
+  client:
+    build: ./client
+    container_name: angular-client
+    ports:
+      - "4200:80"
+    depends_on:
+      - server
+    networks:
+      - mynet
+
+networks:
+  mynet:
