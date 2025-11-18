@@ -5,6 +5,16 @@ docker build -t sahul/angular-client:latest ./client
 docker push sahul/express-server:latest
 docker push sahul/angular-client:latest
 
+# To install k3s (single-node Kubernetes) on EC2
+# on the EC2 instance (as root or sudo)
+curl -sfL https://get.k3s.io | sh -
+
+# after install you can use kubectl (k3s bundles kubectl)
+sudo kubectl get nodes
+
+# Optional: copy the kubeconfig
+sudo cat /etc/rancher/k3s/k3s.yaml
+
 # ArgoCD setup
 kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
