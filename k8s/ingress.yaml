@@ -11,15 +11,14 @@ spec:
     - host: 18.188.176.104.nip.io
       http:
         paths:
-          - path: /(.*)
+          - path: /
             pathType: Prefix
             backend:
               service:
                 name: angular-service
                 port:
                   number: 80
-
-          - path: /api(/|$)(.*)
+          - path: /api
             pathType: Prefix
             backend:
               service:
