@@ -8,7 +8,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: 18.188.176.104.nip.io
+    - host: my-angular-app
       http:
         paths:
           - path: /
