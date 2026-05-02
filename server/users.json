@@ -1,7 +1,7 @@
 [
   {
-    "name": "",
-    "email": "",
-    "password": ""
+    "name": "admin",
+    "email": "admin@gmail.com",
+    "password": "admin"
   }
 ]
